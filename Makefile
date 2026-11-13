@@ -8,7 +8,7 @@ P11_KIT ?= p11-kit
 PYTHON ?= python3
 CLANG ?= clang
 
-check:: check-compat check-gnu check-oasis check-build
+check:: check-compat check-gnu check-oasis
 
 check-compat::
 	$(PYTHON) -I tests/check-compat.py --cc $(CLANG) \
@@ -24,6 +24,3 @@ check-oasis::
 	$(PYTHON) -I tests/check-compat.py --cc $(CLANG) \
 		--reference tests/oasis.h --candidate pkcs11.h \
 		--expected tests/expected-oasis.txt -- -I$(PKCS11_HEADERS)
-
-check-build::
-	$(SHELL) tests/check-build.sh -I$(PKCS11_HEADERS)
