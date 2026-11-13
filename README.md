@@ -41,10 +41,3 @@ a gap.  Intentional gaps are listed, with reasons, in
 
 `check-build` additionally compiles both modes as C and C++ with gcc and
 clang using `-Wall -Wextra -Werror`.
-
-Paths can be overridden with `PKCS11_HEADERS=` and `REFERENCE=`.  The
-checker can also be run directly, e.g. to compare any two headers:
-
-```console
-$ python3 -I tests/check-compat.py --reference old.h --candidate new.h -- -I...
-```
