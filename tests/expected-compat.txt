@@ -1,0 +1,47 @@
+# Intentional differences between p11-kit's pkcs11.h (CRYPTOKI_COMPAT
+# mode) and pkcs11.h in this directory.  Format: <kind> <name pattern>.
+
+# Internal helper macros of the old header.
+macro CK_FUNCTION_LIST_*
+macro _CK_DECLARE_FUNCTION
+
+# Leaked from the old header: these GNU-to-standard renaming macros
+# were not #undef'd at the end.
+macro attribute_count
+macro context_data_length
+macro key_ptr
+macro templ
+
+# Leaked GNU typedefs.
+typedef* ck_ec_kdf_t
+typedef* ck_profile_id
+
+# The old header used values that differ from the OASIS headers
+# (0x1b5..0x1b9).
+macro-value CKR_EXCEEDED_MAX_ITERATIONS
+macro-value CKR_FIPS_SELF_TEST_FAILED
+macro-value CKR_LIBRARY_LOAD_FAILED
+macro-value CKR_PIN_TOO_WEAK
+macro-value CKR_PUBLIC_KEY_INVALID
+
+# Same value, type follows the standard headers ("1" in OASIS).
+macro-type CKF_DONT_BLOCK
+# Same value; the public domain header uses 0x00800000U instead of UL.
+macro-type CKF_EC_NAMEDCURVE
+
+# Member names / types where the old header deviated from OASIS.
+member* struct ck_async_data.ulValueLen
+member* struct ck_ccm_message_params.pMac
+member* struct ck_ccm_params.aad
+member* struct ck_ccm_params.nonce
+member* struct ck_salsa20_chacha20_poly1305_msg_params.ulNonceBits
+member* struct ck_salsa20_chacha20_poly1305_params.ulNonceBits
+member* struct ck_sp800_108_feedback_kdf_params.pIv
+member* struct ck_sp800_108_feedback_kdf_params.ulIvLen
+member* struct ck_x2ratchet_respond_params.pInitiator_identity
+member-type struct CK_INTERFACE.pInterfaceName
+
+# Member names where the public domain header deviates from OASIS
+# (missing "p" prefix); to be fixed in pkcs11-headers.
+member* struct ck_kea_derive_params.p*
+member* struct ck_x9_42_mqv_derive_params.p*

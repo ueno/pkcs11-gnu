@@ -1,0 +1,6 @@
+[submodule "pkcs11-headers"]
+	path = pkcs11-headers
+	url = https://github.com/latchset/pkcs11-headers.git
+[submodule "p11-kit"]
+	path = p11-kit
+	url = https://github.com/p11-glue/p11-kit.git

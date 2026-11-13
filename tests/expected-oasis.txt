@@ -1,0 +1,19 @@
+# Differences between pkcs11.h in this directory and the normative
+# OASIS headers (included through tests/oasis.h).  Format: <kind> <name
+# pattern>.
+
+# Platform macros the OASIS headers expect from the includer (defined in
+# tests/oasis.h), and their include guards.
+macro CK_CALLBACK_FUNCTION
+macro CK_DECLARE_FUNCTION
+macro CK_DECLARE_FUNCTION_POINTER
+macro CK_PTR
+macro _PKCS11T_H_
+macro _PKCS11_H_
+macro-type NULL_PTR
+
+# Bugs in the public domain header, to be fixed in pkcs11-headers:
+# 0x00800000U instead of UL, and members missing the "p" prefix.
+macro-type CKF_EC_NAMEDCURVE
+member* struct CK_KEA_DERIVE_PARAMS.p*
+member* struct CK_X9_42_MQV_DERIVE_PARAMS.p*

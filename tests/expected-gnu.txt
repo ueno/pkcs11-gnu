@@ -1,0 +1,10 @@
+# Intentional differences between p11-kit's pkcs11.h (CRYPTOKI_GNU
+# mode) and pkcs11-gnu.h.  Format: <kind> <name pattern>.
+
+# The old header used values that differ from the OASIS headers
+# (0x1b5..0x1b9).
+macro-value CKR_EXCEEDED_MAX_ITERATIONS
+macro-value CKR_FIPS_SELF_TEST_FAILED
+macro-value CKR_LIBRARY_LOAD_FAILED
+macro-value CKR_PIN_TOO_WEAK
+macro-value CKR_PUBLIC_KEY_INVALID
