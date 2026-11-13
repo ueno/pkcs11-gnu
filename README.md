@@ -37,7 +37,6 @@ a gap.  Intentional gaps are listed, with reasons, in
 |----------------------|-----------------------------------|---------------------------------|
 | `check-compat`       | p11-kit `common/pkcs11.h`         | default                         |
 | `check-gnu`          | p11-kit `common/pkcs11.h`         | `CRYPTOKI_GNU`                  |
-| `check-*-win32`      | p11-kit `common/pkcs11.h`         | `CRYPTOKI_FORCE_WIN32` (packed) |
 | `check-oasis`        | OASIS 3.2 headers (`tests/oasis.h`) | default                       |
 
 `check-build` additionally compiles both modes as C and C++ with gcc and
